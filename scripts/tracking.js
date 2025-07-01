@@ -102,11 +102,7 @@ async function loadPage(){
     cartQuantity+=cartItem.quantity;
     
   })
-  document.querySelector('.js-cart-quantity').innerHTML=cartQuantity;
-  totalCartQuantity=cartQuantity;
-  localStorage.setItem("cartQuantity",JSON.stringify(totalCartQuantity));
-    
-  }
+  document.querySelector('.cart-quantity').innerHTML=cartQuantity;
   
 
 
