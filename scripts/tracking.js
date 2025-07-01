@@ -1,7 +1,7 @@
 import { loadProductsFetch,getProduct } from "../data/products.js";
 import { orders } from "../data/orders.js";
 import dayjs from "https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js";
-
+import {cart} from "../data/orders.js"
 const url=new URL(window.location.href);
 const orderId=url.searchParams.get('orderId');
 const productId=url.searchParams.get('productId');
@@ -96,6 +96,17 @@ async function loadPage(){
     })
     
   })
+  let cartQuantity=0;
+
+  cart.forEach((cartItem)=>{
+    cartQuantity+=cartItem.quantity;
+    
+  })
+  document.querySelector('.js-cart-quantity').innerHTML=cartQuantity;
+  totalCartQuantity=cartQuantity;
+  localStorage.setItem("cartQuantity",JSON.stringify(totalCartQuantity));
+    
+  }
   
 
 
