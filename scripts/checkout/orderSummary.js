@@ -18,7 +18,7 @@ export function renderOrderSummary(){
   if(cart.length === 0){
     document.querySelector('.js-order-summary')
         .innerHTML=`<p>Your cart is empty.</p>
-      <button class='view-products-button button-primary' onclick="window.location.href='amazon.html'">View products</button>`
+      <button class='view-products-button button-primary' onclick="window.location.href='index.html'">View products</button>`
   }
   else{
 
